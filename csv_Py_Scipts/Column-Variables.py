@@ -1,19 +1,19 @@
 # Global variables representing column indices for the dataset (SpotifyFeatures.csv)
 
-GENRE = 0
-ARTIST = 1
-TRACK_NAME = 2
-POPULARITY = 3
-ACOUSTICNESS = 4
-DANCEABILITY = 5
-DURATION_MS = 6
-ENERGY = 7
-INSTRUMENTALNESS = 8
-KEY = 9
-LIVENESS = 10
-LOUDNESS = 11
-MODE = 12
-SPEECHINESS = 13
-TEMPO = 14
-TIME_SIGNATURE = 15
-VALENCE = 16
+str(GENRE) = 0
+str(ARTIST) = 1
+str(TRACK_NAME) = 2
+int(POPULARITY) = 3
+float(ACOUSTICNESS) = 4
+float(DANCEABILITY) = 5
+int(DURATION_MS) = 6
+float(ENERGY) = 7
+float(INSTRUMENTALNESS) = 8
+str(KEY) = 9
+float(LIVENESS) = 10
+float(LOUDNESS) = 11
+bool(MODE) = 12
+float(SPEECHINESS) = 13
+float(TEMPO) = 14
+str(TIME_SIGNATURE) = 15
+float(VALENCE) = 16
