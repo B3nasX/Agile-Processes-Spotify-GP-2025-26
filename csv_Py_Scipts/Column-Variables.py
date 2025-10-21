@@ -1,0 +1,19 @@
+# Global variables representing column indices for the dataset (SpotifyFeatures.csv)
+
+GENRE = 0
+ARTIST = 1
+TRACK_NAME = 2
+POPULARITY = 3
+ACOUSTICNESS = 4
+DANCEABILITY = 5
+DURATION_MS = 6
+ENERGY = 7
+INSTRUMENTALNESS = 8
+KEY = 9
+LIVENESS = 10
+LOUDNESS = 11
+MODE = 12
+SPEECHINESS = 13
+TEMPO = 14
+TIME_SIGNATURE = 15
+VALENCE = 16
