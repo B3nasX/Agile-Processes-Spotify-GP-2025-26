@@ -1,19 +1,22 @@
-import numpy as np  
-import pandas as pd 
+import sys
+import os
+# Going to upper directory
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import importDataset
 
-#A function to find all null values in a csv    
+data_set = importDataset.loadData()
 
-    
-def find_nulls_in_csv(file_path):
-    # Read the CSV file into a DataFrame
-    df = pd.read_csv(file_path)
-    
+# A function to find all null values in a csv
+# Argument is the data_set loaded from "importDataset.py"
+def findNullsInCSV(data_set):
     # Find null values in the DataFrame
-    nulls = df.isnull()
-    
-    # Get the count of null values in each column
-    null_counts = df.isnull().sum()
-    
-    print(f'\n{null_counts}')
+    nulls = data_set.isnull()
+    # ^ Currently unused but that can change
 
-find_nulls_in_csv('SpotifyFeatures.csv')
+    # Get the count of null values in each column
+    null_counts = data_set.isnull().sum()
+    return null_counts
+
+if __name__ == "__main__":
+    data_set_null_count = findNullsInCSV(data_set)
+    print(data_set_null_count)
