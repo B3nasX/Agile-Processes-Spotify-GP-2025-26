@@ -6,7 +6,7 @@ import pandas as pd
 
 def loadData():
     try:
-        data_set = pd.read_csv("SpotifyFeatures.csv", skiprows=1)
+        data_set = pd.read_csv("SpotifyFeatures.csv", skiprows=0)
         print("Data imported successfully:")
         return data_set
     
