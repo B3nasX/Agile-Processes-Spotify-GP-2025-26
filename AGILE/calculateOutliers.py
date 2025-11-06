@@ -21,7 +21,7 @@ VALID_RANGES = {
 
 
 def plot_boxplots(df: pd.DataFrame, features: List[str]) -> None: # Plot boxplots for given features
-    if not features:
+    if not features: # check if features list is empty
         print('No features found to plot.')
         return
 
@@ -37,7 +37,7 @@ def plot_boxplots(df: pd.DataFrame, features: List[str]) -> None: # Plot boxplot
         bp = axes[i].boxplot(data, vert=True, patch_artist=True) # create boxplot
         # Color (outliers) red for visibility
         for flier in bp.get('fliers', []): # color fliers red
-            flier.set(marker='o', color='red', alpha=0.6) # set flier properties
+            flier.set(marker='o', color='red', alpha=1) # set flier properties
 
         # draw valid range if available
         lo, hi = VALID_RANGES.get(feat, (None, None)) # get valid range
@@ -50,8 +50,8 @@ def plot_boxplots(df: pd.DataFrame, features: List[str]) -> None: # Plot boxplot
         axes[i].set_ylabel('Value') # set y-label
 
     # hide any unused axes
-    for j in range(i + 1, len(axes)):
-        axes[j].set_visible(False)
+    for j in range(i + 1, len(axes)): # hide unused axes
+        axes[j].set_visible(False) #
 
     plt.tight_layout() # adjust layout
     plt.suptitle('Boxplots (only)', y=1.02) # set super title
