@@ -29,12 +29,12 @@ def sortByAcousticness(data_set):
     print(data_set_acousticness.head())
     return data_set_acousticness
 
-def sortByDancability(data_set):
-    print("-Sorted by Dancability-")
-    dancability_column = data_set.columns[columnVariables.DANCABILITY]
-    data_set_dancability = data_set.sort_values(by=dancability_column, ascending=False)
-    print(data_set_dancability.head())
-    return data_set_dancability
+def sortByDanceability(data_set):
+    print("-Sorted by Danceability-")
+    danceability_column = data_set.columns[columnVariables.DANCEABILITY]
+    data_set_danceability = data_set.sort_values(by=danceability_column, ascending=False)
+    print(data_set_danceability.head())
+    return data_set_danceability
 
 def sortByDuration(data_set):
     print("-Sorted by Duration-")
@@ -116,7 +116,7 @@ if __name__ == "__main__":
         case "2":
             sorted_data_set = sortByAcousticness(data_set) 
         case "3":
-            sorted_data_set = sortByDancability(data_set) 
+            sorted_data_set = sortByDanceability(data_set) 
         case "4":
             sorted_data_set = sortByDuration(data_set) 
         case "5":
