@@ -18,4 +18,4 @@ def loadData():
 if __name__ == "__main__":
     # Just to test
     data_set = loadData()
-    print(data_set.head())
+    print(data_set.read)
