@@ -224,7 +224,7 @@ class SongRecommenderApp:
             text="No song selected",
             font=("Helvetica", 11),
             bg="#2a2a2a",
-            fg="#888888",
+            fg="#ffffff",
             justify="left",
             anchor="w"
         )
@@ -487,7 +487,8 @@ class SongRecommenderApp:
         song_info += f"Genre: {song['genre']}\n"
         song_info += f"Popularity: {song['popularity']}"
         
-        self.selected_song_label.config(text=song_info, fg="#000000")
+        # Keep selected song text white for visibility on dark background
+        self.selected_song_label.config(text=song_info, fg="#ffffff")
         
     def get_similar_songs(self, song_idx, num_recommendations=5):
         """Find similar songs using cosine similarity"""
