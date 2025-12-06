@@ -7,8 +7,18 @@ from sklearn.preprocessing import StandardScaler
 import webbrowser
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import importDataset
 
+ 
+def loadData():
+    try:
+        data_set = pd.read_csv("data/processed/SpotifyFeatures_cleaned.csv", skiprows=0)
+        print("Data imported successfully:")
+        return data_set
+    
+    except Exception as e:
+        print("Error while importing CSV:")
+        print(e)
+    
 
 class SongRecommenderApp:
     def __init__(self, root):
@@ -24,9 +34,17 @@ class SongRecommenderApp:
         self.create_widgets()
         
     def load_data(self):
+        self.df = loadData()
+        self.feature_columns = [
+            "acousticness", "danceability", "energy", "instrumentalness",
+            "liveness", "loudness", "speechiness", "tempo", "valence"
+        ]
+        features = self.df[self.feature_columns].fillna(0)
+        self.scaler = StandardScaler()
+        self.normalized_features = self.scaler.fit_transform(features.values)
+        self.features_df = features
         """Load and prepare the Spotify dataset"""
         print("Loading dataset...")
-        self.df = importDataset.loadData()
         
         # Audio features to use for similarity calculation
         self.feature_columns = [
@@ -703,6 +721,7 @@ class SongRecommenderApp:
         ).pack(pady=20)
 
 def main():
+   
     root = tk.Tk()
     app = SongRecommenderApp(root)
     root.mainloop()
@@ -710,3 +729,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

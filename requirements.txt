@@ -1,0 +1,10 @@
+# Core data science stack
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+
+# GUI & plotting
+matplotlib==3.9.2
+seaborn==0.13.2
+
+
